@@ -8,25 +8,12 @@ namespace _03_Vacation
     {
         static void Main(string[] args)
         {
-            //• A count of people who are going on vacation.
-
             int people = int.Parse(Console.ReadLine());
-
-            //• Type of the group(Students, Business or Regular).
 
             string typeOfGroup = Console.ReadLine();
 
-            //• The day of the week which the group will stay on(Friday, Saturday or Sunday).
-
             string dayOfWeek = Console.ReadLine();
             
-            //Based on the given information calculate how much the group will pay for the entire vacation.
-            //The price for a single person is as follows:
-            //Friday Saturday Sunday
-            //Students 8.45 9.80 10.46
-            //Business 10.90 15.60 16
-            //Regular 15 20 22.50
-
             double studentFridayPrice = 8.45;
             double studentSaturdayPrice = 9.80;
             double studentSundayPrice = 10.46;
@@ -96,11 +83,6 @@ namespace _03_Vacation
                 }
             }
 
-            //There are also discounts based on some conditions:
-            //• For Students – if the group is 30 or more people, you should reduce the total price by 15 %.
-            //• For Business – if the group is 100 or more people, 10 of the people stay for free.
-            //• For Regular – if the group is between 10 and 20 people(both inclusively), reduce the total price by 5 %.
-
             if (typeOfGroup == "Students" && people >= 30)
             {
                 fullPrice = fullPrice * 0.85;
@@ -128,11 +110,6 @@ namespace _03_Vacation
                 fullPrice = fullPrice * 0.95;
             }
             
-            //Note: You should reduce the prices in that EXACT order!
-            //As an output print the final price which the group is going to pay in the format:
-            //"Total price: {price}"
-            //The price should be formatted to the second decimal point.
-
             Console.WriteLine($"Total price: {fullPrice:f2}");
         }
     }
